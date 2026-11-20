@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563eb">
+  <meta name="description" content="A simple weekly savings calculator. Choose an amount and see your estimated savings over time.">
+  <title>My Money Calculator</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="logo" aria-hidden="true">₨</div>
+      <p class="eyebrow">YOUR SAVINGS, MADE SIMPLE</p>
+      <h1>My Money Calculator</h1>
+      <p class="intro">Choose how much you save each week and see how it adds up.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="amount-heading">
+      <h2 id="amount-heading">1. Choose a weekly amount</h2>
+      <div class="choice-grid" id="amount-options">
+        <button class="choice" type="button" data-amount="10" aria-pressed="false">₨10</button>
+        <button class="choice" type="button" data-amount="50" aria-pressed="false">₨50</button>
+        <button class="choice" type="button" data-amount="100" aria-pressed="false">₨100</button>
+        <button class="choice" type="button" data-amount="150" aria-pressed="false">₨150</button>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="period-heading">
+      <h2 id="period-heading">2. Choose a time period</h2>
+      <div class="choice-grid" id="period-options">
+        <button class="choice" type="button" data-weeks="1" data-period="1 week" aria-pressed="false">1 week</button>
+        <button class="choice" type="button" data-weeks="4" data-period="1 month" aria-pressed="false">1 month</button>
+        <button class="choice" type="button" data-weeks="20" data-period="5 months" aria-pressed="false">5 months</button>
+        <button class="choice" type="button" data-weeks="52" data-period="1 year" aria-pressed="false">1 year</button>
+      </div>
+      <p class="note">Estimates use 4 weeks per month and 52 weeks per year.</p>
+    </section>
+
+    <section class="result" aria-live="polite">
+      <p class="result-label">ESTIMATED TOTAL SAVINGS</p>
+      <p class="total" id="total">₨0</p>
+      <p class="breakdown" id="breakdown">Choose an amount and a time period to calculate.</p>
+      <button class="reset" id="reset" type="button">Reset selections</button>
+    </section>
+
+    <footer>
+      <p>Estimate only. No interest, fees, or investment returns are included.</p>
+    </footer>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
